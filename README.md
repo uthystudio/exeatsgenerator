@@ -12,5 +12,7 @@ The other important point in our project, is, that all your information, all you
 As you see, our project is useful and really saves your time. And, as we already have mentioned, it’s eco-friendly. 
 
 __Computer version: https://letovo.000webhostapp.com__
+![letovo](letovo/com.png)
 
 __Mobile version: https://letovomobil.000webhostapp.com__
+![letovo](letovo/mob.png)
