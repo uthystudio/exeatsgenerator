@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  background: rgb(64,199,129);  
+  padding: 15px;
+  
+}
+.list-menu{
+  display: flex;
+  list-style: none;
+}
+.list-menu > li > a{
+  color: #fff;
+  display: block;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-size: 24px;
+}
+.list-menu > li > a:hover{
+  background: rgb(64,199,129);
+}
+
+#btn-menu{
+  display: none;
+}
+#btn-menu + label{
+  display: none; 
+  position: relative;
+  color: #fff; 
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+#btn-menu + label:before{
+  content: '\f0c9';  
+  display: inline-block;
+  font-family:'FontAwesome';
+  font-size: 45px;
+}
+#btn-menu:checked + label:before{
+  content: '\f00d';
+  color: #f00;
+}
+
+@media screen and (max-width: 1000px) {
+ 
+   #btn-menu + label{
+      display: inline-block;
+   }
+  #btn-menu + label + .list-menu{
+    display: none;
+  }
+  #btn-menu:checked + label + .list-menu{
+    display: block;
+  }
+}
+    </style>
+</head>
+<body>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+<nav>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu"></label>
+
+  <ul class="list-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="exeats1.html">Standart Exeats Generator</a></li>
+    <li><a href="exeats2.html">Holiday Exeats Generator</a></li>
+    <li><a href="exeats3.html">Dorm Changes Form Generator</a></li>
+    <li><a href="questions.html">Help</a></li>
+  </ul>
+</nav>
+   <video style="width: 100%; height:100%; margin-top: 30px;" src="video.mp4" controls></video>
+</body>
+</html>

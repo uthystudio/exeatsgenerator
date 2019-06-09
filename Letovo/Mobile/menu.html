@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+<style type="text/css">
+        .block {
+        padding: 0;
+        font-size: 14px;
+        }
+        .block .element{
+        border: solid 7px rgb(64,199,129);
+        border-radius: 10px;
+        margin: 0px 0px 30px -50px;
+        padding: 0px 0px 0px 0px;
+        float: left;
+        height: 44%;
+        width: 900px;
+        }
+        .block .element:hover{
+        border: solid 7px rgb(44,179,109);
+
+        }
+        .block .img{
+        text-decoration: none;
+        }
+        .block .img img{
+        margin: 0px 0px -4px 0px;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        }
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  background: rgb(64,199,129);  
+  padding: 15px;
+  
+}
+.list-menu{
+  display: flex;
+  list-style: none;
+}
+.list-menu > li > a{
+  color: #fff;
+  display: block;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-size: 24px;
+}
+.list-menu > li > a:hover{
+  background: rgb(64,199,129);
+}
+
+#btn-menu{
+  display: none;
+}
+#btn-menu + label{
+  display: none; 
+  position: relative;
+  color: #fff; 
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+#btn-menu + label:before{
+  content: '\f0c9';  
+  display: inline-block;
+  font-family:'FontAwesome';
+  font-size: 45px;
+}
+#btn-menu:checked + label:before{
+  content: '\f00d';
+  color: #f00;
+}
+
+@media screen and (max-width: 1000px) {
+ 
+   #btn-menu + label{
+      display: inline-block;
+   }
+  #btn-menu + label + .list-menu{
+    display: none;
+  }
+  #btn-menu:checked + label + .list-menu{
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+<nav>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu"></label>
+
+  <ul class="list-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="exeats1.html">Standart Exeats Generator</a></li>
+    <li><a href="exeats2.html">Holiday Exeats Generator</a></li>
+    <li><a href="exeats3.html">Dorm Changes Form Generator</a></li>
+    <li><a href="questions.html">Help</a></li>
+  </ul>
+</nav>
+   <div style="margin-top: 47.88px; margin-left: 80px;">
+        <div class="block" style="width: 90%;">
+            <div class="element" style="width: 110%;">
+                <a href="exeats1.html">
+                    <div class="img" style="width: 100%;">
+                        <img src="week.png" style="width: 100%;">
+                    </div>
+                </a>
+            </div>
+
+            <div class="element" style="width: 110%;">
+                <a href="exeats2.html">
+                    <div class="img" style="width: 100%;">
+                        <img src="hol.png" style="width: 100%;">
+                    </div>
+                </a>
+            </div>
+
+            <div class="element" style="width: 110%;">
+                <a href="exeats3.html">
+                    <div class="img" style="width: 100%;">
+                        <img src="dorm.png" style="width: 100%;">
+                    </div>
+                </a>
+            </div>
+        </div>
+   </div>
+</body>
+</html>

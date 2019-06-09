@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exeat-Forms Generator</title>
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <style>
+      /* Базовые стили формы */
+      form{
+        margin:0 auto;
+        max-width:95%;
+        box-sizing:border-box;
+        padding:40px;
+        border-radius:5px;
+        background:RGBA(255,255,255,1);
+        -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+        box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+      }
+      /* Стили полей ввода */
+      .textbox{
+        height:50px;
+        width:100%;
+        border-radius:3px;
+        border:rgba(0,0,0,.3) 2px solid;
+        box-sizing:border-box;
+        font-family: 'Open Sans', sans-serif;
+        font-size:18px;
+        padding:10px;
+        margin-bottom:30px;
+      }
+      .message:focus,
+      .textbox:focus{
+        outline:none;
+         border:rgba(24,149,215,1) 2px solid;
+         color:rgba(24,149,215,1);
+      }
+      /* Стили текстового поля */
+      .message{
+          background: rgba(255, 255, 255, 0.4);
+          width:100%;
+          height: 120px;
+          border:rgba(0,0,0,.3) 2px solid;
+          box-sizing:border-box;
+          -moz-border-radius: 3px;
+          font-size:18px;
+          font-family: 'Open Sans', sans-serif;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          display:block;
+          padding:10px;
+          margin-bottom:30px;
+          overflow:hidden;
+      }
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  background: rgb(64,199,129);  
+  padding: 15px;
+  
+}
+.list-menu{
+  display: flex;
+  list-style: none;
+}
+.list-menu > li > a{
+  color: #fff;
+  display: block;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-size: 24px;
+}
+.list-menu > li > a:hover{
+  background: rgb(64,199,129);
+}
+
+#btn-menu{
+  display: none;
+}
+#btn-menu + label{
+  display: none; 
+  position: relative;
+  color: #fff; 
+  height: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+#btn-menu + label:before{
+  content: '\f0c9';  
+  display: inline-block;
+  font-family:'FontAwesome';
+  font-size: 45px;
+}
+#btn-menu:checked + label:before{
+  content: '\f00d';
+  color: #f00;
+}
+
+@media screen and (max-width: 1000px) {
+ 
+   #btn-menu + label{
+      display: inline-block;
+   }
+  #btn-menu + label + .list-menu{
+    display: none;
+  }
+  #btn-menu:checked + label + .list-menu{
+    display: block;
+  }
+}
+      </style>
+   <script>
+        function restoreData() {
+            document.getElementById("name").value = window.localStorage.getItem("name");
+            document.getElementById("surname").value = window.localStorage.getItem("surname");
+            document.getElementById("man1").value = window.localStorage.getItem("man1");
+            document.getElementById("man2").value = window.localStorage.getItem("man2");
+            document.getElementById("man3").value = window.localStorage.getItem("man3");
+            document.getElementById("grade").value = window.localStorage.getItem("grade");
+            document.getElementById("house").value = window.localStorage.getItem("house");
+            makeLink();
+        }
+        function saveData() {
+            window.localStorage.setItem("name", document.getElementById('name').value);
+            window.localStorage.setItem("surname", document.getElementById('surname').value);
+            window.localStorage.setItem("man1", document.getElementById('man1').value);
+            window.localStorage.setItem("man2", document.getElementById('man2').value);
+            window.localStorage.setItem("man3", document.getElementById('man3').value);
+            window.localStorage.setItem("grade", document.getElementById('grade').value);
+            window.localStorage.setItem("house", document.getElementById('house').value);
+        }
+        function makeLink() {
+            const link = "mailto:boarding@letovo.ru?subject=Dorm Changes Form of " + document.getElementById('name').value + " " + document.getElementById('surname').value + "&body=Name: " + document.getElementById('name').value + "%0ASurname: " + document.getElementById('surname').value + "%0AGrade: " + document.getElementById('grade').value + "%0AHouse: " + document.getElementById('house').value + "%0A1st Name: " + document.getElementById('man1').value + "%0A2nd Name: " + document.getElementById('man2').value + "%0A3rd Name: " + document.getElementById('man3').value;
+            document.getElementById('myLink').setAttribute('href', link);
+        }
+   </script>
+</head>
+<body onload="restoreData()">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+<nav>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu"></label>
+
+  <ul class="list-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="exeats1.html">Standart Exeats Generator</a></li>
+    <li><a href="exeats2.html">Holiday Exeats Generator</a></li>
+    <li><a href="exeats3.html">Dorm Changes Form Generator</a></li>
+    <li><a href="questions.html">Help</a></li>
+  </ul>
+</nav>
+
+   <a href="https://vk.com/feironox5" style="text-decoration:none; color:white; background: rgb(64,199,129); top: 90%; position: fixed; right: 5%;"> Powered by Gleb Kiva </a>
+   <div>
+      <form>
+         <h1 style="color: rgb(64,199,129);">Dorm Changes Form</h1>
+         <input onchange="makeLink()" id="name" placeholder="Enter your name" class="textbox"  />
+         <input onchange="makeLink()" id="surname" placeholder="Enter your surname" class="textbox"  />
+         <input type="number" onchange="makeLink()" id="grade" placeholder="Enter your grade" class="textbox"  />
+         <input onchange="makeLink()" id="house" placeholder="House 1, House 2, House 3, House 4" class="textbox"  />
+
+         <input onchange="makeLink()" id="man1" placeholder="Enter the 1st neighbour name" class="textbox"  />
+         <input onchange="makeLink()" id="man2" placeholder="Enter the 2nd neighbour name" class="textbox"  />
+         <input onchange="makeLink()" id="man3" placeholder="Enter the 3rd neighbour name" class="textbox"  />
+
+         <a onclick="saveData()" id="myLink" style="font-weight: 700; color: white; text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129);">Generate Exeat</a>
+         <a href="#" onclick="saveData()" style="font-weight: 700; color: white; text-decoration: none; padding: .8em 1em calc(.8em + 3px); border-radius: 3px; background: rgb(64,199,129);">Save my data</a>
+      </form>
+   </div>
+   </body>
+</html>
